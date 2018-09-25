@@ -46,15 +46,15 @@ public class DownloadPhase implements Runnable {
 
         try {
             
-            InputStream in = new BufferedInputStream(urlConnection.getInputStream());
+            InputStream stream = new BufferedInputStream(urlConnection.getInputStream());
             ByteArrayOutputStream out = new ByteArrayOutputStream();
             byte[] buf = new byte[1024];
-            int n = 0;
-            while (-1 != (n = in.read(buf))) {
-                out.write(buf, 0, n);
+            int index = 0;
+            while (-1 != (index = stream.read(buf))) {
+                out.write(buf, 0, index);
             }
             out.close();
-            in.close();
+            stream.close();
             byte[] response = out.toByteArray();
 
             FileOutputStream fos = new FileOutputStream(filePartName);
@@ -69,8 +69,7 @@ public class DownloadPhase implements Runnable {
         }
         cal = Calendar.getInstance();
         String end = sdf.format(cal.getTime());
-        System.out.println("start: " + start + " end: " + end);
-        System.out.println("Parts Download have Finished");
+        System.out.println(filePartName+" Downloading....Start Time: " + start + " End Time: " + end);
 
         try {
             new MergeFiles().defragmentation(filePartList);

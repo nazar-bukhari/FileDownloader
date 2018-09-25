@@ -18,7 +18,7 @@ import java.util.List;
  */
 public class MergeFiles {
 
-    private final File finalFile = new File("Rock.mp3");
+    private final File finalFile = new File("MyMusic.mp3");
     
     public void defragmentation(List<File> files) throws IOException {
 

@@ -15,7 +15,7 @@ public class Main {
 
     public static void main(String[] args) throws IOException  {
 
-        String downloadURL = "http://download.music.com.bd/Music/N/Nagorik/Nagorik/10%20-%20Nagorik%20-%20Shondha%20(music.com.bd).mp3";
+        String downloadURL = "http://download.music.com.bd/Music/W/Warfaze/Poth%20Chola/12%20-%20Warfaze%20-%20Oshamajik%20(music.com.bd).mp3";
         
         DownloadInitialization downloadInitialization = new DownloadInitialization();
         downloadInitialization.initializeDownload(downloadURL);
